@@ -15,3 +15,20 @@ For each record in the dataset it is provided:
 - A 561-feature vector with time and frequency domain variables.
 - Its activity label.
 - An identifier of the subject who carried out the experiment.
+
+## Transformations
+
+1. Merges the training and the test sets to create one data set.
+Load both the train and test sets (x and y data), enrich with subject_id. Giving column names.
+
+2. Extracts only the measurements on the mean and standard deviation for each measurement.
+Using grepl() to select only mean and standard deviation columns.
+
+3. Uses descriptive activity names to name the activities in the data set.
+Adjusting names for better readability.
+
+4. Appropriately labels the data set with descriptive activity names.
+Merge with the acitvity_labels to replace activity_id.
+
+5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+Use aggregate function to create a table with means per subject per activity for each variable. This new table is found in tidy_data.txt.
